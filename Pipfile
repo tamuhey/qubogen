@@ -4,9 +4,9 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-networkx = "*"
-dwave-qbsolv = "*"
-pytest = "*"
+networkx = ">=2.0"
+dwave-qbsolv = ">=0.2.10"
+pytest = ">=4.0.0"
 
 [packages]
 
