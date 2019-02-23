@@ -1,4 +1,4 @@
-# QUBOgen
+# QUBOgen [![Build Status](https://travis-ci.org/tamuhey/qubogen.svg?branch=master)](https://travis-ci.org/tamuhey/qubogen)
 
 - QUBO matrix generator on major combinatorial optimization problems written in Python
 
