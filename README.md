@@ -12,7 +12,7 @@ $ pip install -e .
 
 # Usage
 
-- See [JupyterNotebook](qubo.ipynb)
+- See [Number Partitioning example in JupyterNotebook](./notebooks/number_partitioning.ipynb)
 
 # Refs
 
