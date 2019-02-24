@@ -16,4 +16,4 @@ $ pip install -e .
 
 # Refs
 
-- [A Tutorial on Formulating and Using QUBO Models](http://meta-analytics.net/references/QUBO%20Tutorial%20%20Version%201-4.pdf)
+- [A Tutorial on Formulating and Using QUBO Models](https://arxiv.org/abs/1811.11538)
