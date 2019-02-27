@@ -5,9 +5,7 @@
 # Installation
 
 ```bash
-$ git clone https://github.com/tamuhey/qubogen
-$ cd qubogen
-$ pip install -e .
+$ pip install qubuogen
 ```
 
 # Usage
