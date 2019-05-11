@@ -5,7 +5,7 @@
 # Installation
 
 ```bash
-$ pip install qubuogen
+$ pip install qubogen
 ```
 
 # Examples
