@@ -124,6 +124,7 @@ def qubo_general01(cost, a, b, sign, penalty=10.):
     """General 0/1 Programming
     
     Args:
+        cost: general01 is the problem to max(cost * x)
         a, b: constraint (ax=b)
         sign: 0 is equality, 1 is >=, -1 is <=
     """
