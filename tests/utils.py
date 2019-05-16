@@ -4,9 +4,9 @@ from qubogen.utils import *
 from dwave_qbsolv import QBSolv
 
 
-def qbsolv_from_ndarray(q: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
+def qbsolv_from_ndarray(q: np.ndarray, seed=0) -> Tuple[np.ndarray, np.ndarray]:
     """Returns lowest energy samples from dwave qbsolv.(for test util)"""
-    res = QBSolv().sample_qubo(to_dict(q)).record
+    res = QBSolv().sample_qubo(to_dict(q), seed=seed).record
     i = res.energy == res.energy.min()
     return res.sample[i], res.energy[i]
 
