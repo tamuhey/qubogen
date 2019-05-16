@@ -107,6 +107,49 @@ def test_qubo_general01():
     assert is_contain(sample[:, :5], np.array([1, 0, 0, 1, 1]))
 
 
+def test_qubo_general01_slack_0():
+    # max. - x0 - x1 subject to x0 <= 0
+    c = np.array([-1, -1])
+    a = np.array([[1, 0]])
+    b = np.array([0])
+    s = np.array([-1])
+    q = qubo_general01(c, a, b, s)
+    sample, _ = qbsolv_from_ndarray(q)
+    assert is_contain(sample[:, :2], np.array([0, 0]))
+
+
+def test_qubo_general01_slack_1():
+    # max. - x0 - x1 subject to x0 <= 1
+    c = np.array([-1, -1])
+    a = np.array([[1, 0]])
+    b = np.array([1])
+    s = np.array([-1])
+    q = qubo_general01(c, a, b, s)
+    sample, _ = qbsolv_from_ndarray(q)
+    assert is_contain(sample[:, :2], np.array([0, 0]))
+
+
+def test_qubo_general01_slack_minus1():
+    # max. - x0 - x1 subject to x0 <= -1
+    c = np.array([-1, -1])
+    a = np.array([[1, 0]])
+    b = np.array([-1])
+    s = np.array([-1])
+    q = qubo_general01(c, a, b, s)
+    sample, _ = qbsolv_from_ndarray(q)
+
+
+def test_qubo_general01_negative_a():
+    # max. - x0 - x1 subject to -1 x0 >= 0
+    c = np.array([-1, -1])
+    a = np.array([[-1, 0]])
+    b = np.array([0])
+    s = np.array([1])
+    q = qubo_general01(c, a, b, s)
+    sample, _ = qbsolv_from_ndarray(q)
+    assert is_contain(sample[:, :2], np.array([0, 0]))
+
+
 def test_qubo_qap():
     flow = [[0, 5, 2],
             [5, 0, 3],

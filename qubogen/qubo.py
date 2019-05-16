@@ -128,9 +128,10 @@ def qubo_general01(cost, a, b, sign, penalty=10.):
         sign: 0 is equality, 1 is >=, -1 is <=
     """
     slack = - sign * b
-    slack[sign == 0] = 1.
-    slack[sign == 1] += a[sign == 1, :].sum()
-    slack = np.ceil(np.log2(slack)).astype(np.int)
+    slack[sign == 0] = 0
+    slack[sign == 1] += np.maximum(a[sign == 1, :], 0).sum(axis=1)
+    slack[sign == -1] -= np.minimum(a[sign == -1, :], 0).sum(axis=1)
+    slack = np.ceil(np.log2(np.maximum(slack, 0) + 1)).astype(np.int)
 
     ni = a.shape[0]
     for i, ns in enumerate(slack):
