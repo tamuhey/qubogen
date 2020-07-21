@@ -16,7 +16,6 @@ How to partition a given multiset of numbers into two subsets S1, S2 such that |
 
 ```python
 import qubogen
-from dwave_qbsolv import QBSolv
 ```
 
 sample multiset
